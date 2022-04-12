@@ -21,12 +21,22 @@
         android:id="@+id/timeText"
         android:layout_width="241dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="88dp"
-        android:layout_marginTop="140dp"
-        android:background="#FFFFFF"
+        android:layout_marginStart="89dp"
+        android:layout_marginTop="114dp"
         android:format12Hour="MM-dd HH:mm:ss"
         android:textColor="#000000"
+        android:background="#FFFFFF"
         android:textSize="29sp" />
+
+    <TextView
+        android:id="@+id/testTimeText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="55dp"
+        android:layout_marginTop="582dp"
+        android:textColor="#FFFFFF"
+        android:textSize="12sp"
+        android:text="2022-04-11 03:30" />
 
     <!-- This FrameLayout insets its children based on system windows using
          android:fitsSystemWindows. -->

@@ -3,15 +3,15 @@ package com.example.myapplication
 import android.Manifest
 import android.annotation.SuppressLint
 import android.content.pm.PackageManager
-import android.os.Build
 import android.os.Bundle
+import android.text.format.DateFormat
 import android.view.View
+import android.widget.TextView
 import android.widget.Toast
 import android.widget.VideoView
-import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+
 
 
 /**
@@ -21,7 +21,6 @@ import androidx.core.content.ContextCompat
 class FullscreenActivity : AppCompatActivity() {
     private lateinit var videoView: VideoView
 
-    @RequiresApi(Build.VERSION_CODES.R)
     @SuppressLint("ClickableViewAccessibility", "SdCardPath")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,15 +33,16 @@ class FullscreenActivity : AppCompatActivity() {
             Toast.makeText(this, "need READ_EXTERNAL_STORAGE permission", Toast.LENGTH_LONG).show()
         }
 
+        val testTimeText:TextView = findViewById(R.id.testTimeText)
+        val testTime = System.currentTimeMillis() - 51123456
+        testTimeText.text = DateFormat.format("yyyy-MM-dd HH:mm", testTime)
+
         videoView = findViewById(R.id.videoView)
         videoView.setVideoPath("/sdcard/code/ykm.mp4")
-
 
         videoView.setOnPreparedListener { videoView.start() }
         videoView.setOnCompletionListener{ videoView.start() }
 
-
-//        videoView.start()
         videoView.requestFocus()
 
         videoView.systemUiVisibility =
