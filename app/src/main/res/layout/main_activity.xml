@@ -37,7 +37,7 @@
         android:layout_marginStart="92dp"
         android:layout_marginTop="150dp"
         android:background="#F8F8F8"
-        android:format12Hour="MM-dd HH:mm:ss"
+        android:format12Hour=" MM-dd HH:mm:ss"
         android:textColor="#000000"
         android:textSize="31sp" />
 
